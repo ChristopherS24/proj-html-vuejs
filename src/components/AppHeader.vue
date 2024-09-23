@@ -10,9 +10,32 @@ export default {
 
 <template>
   <header>
-    <h1>
-      {{ message }}
-    </h1>
+    <div class="header-top">
+      <div class="header-logo">
+        <img src="/img/logo-2.png" alt="logo">
+      </div>
+      <div class="header-right">
+        <h2>
+          {{ message }}
+        </h2>
+      </div>
+    </div>
+
+
+    <div class="header-bottom">
+      <div class="header-bottom-left">
+        <div class="jumbotron-left">
+          <img src="/hover-button.png" alt="left">
+        </div>
+      </div>
+
+      <div class="header-bottom-right">
+        <div class="jumbotron-right">
+          <img src="/img/27-1.png" alt="right">
+        </div>
+      </div>
+    </div>
+
   </header>
 </template>
 
@@ -23,6 +46,28 @@ header {
   background-color: $mainBgColor;
   text-align: center;
   padding: 20px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+//header-top
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+//header-bottom
+
+.header-bottom {
+  display: flex;
 }
 
 </style>
