@@ -2,27 +2,22 @@
 export default {
   data() {
     return { 
-      message: 'sb-marketing'
+      message: 'Main'
     }
   }
 }
 </script>
 
 <template>
-  <header>
+  <main>
     <h1>
       {{ message }}
     </h1>
-  </header>
+  </main>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
 
-header {
-  background-color: $mainBgColor;
-  text-align: center;
-  padding: 20px 0;
-}
 
 </style>
