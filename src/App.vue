@@ -13,7 +13,7 @@ import AppFooter from './components/AppFooter.vue';
 export default {
   data() {
     return { 
-      count: 0
+      
     }
   },
   // 2) Dichiarazione del componente
@@ -23,9 +23,7 @@ export default {
     AppFooter
   },
   methods: {
-    incrementCount() {
-      this.count++;
-    }
+
   }
 }
 </script>
@@ -38,9 +36,7 @@ export default {
     <AppFooter />
     
     <main>
-      <button class="btn btn-primary" @click="incrementCount()">
-        {{ count }}
-      </button>
+
     </main>
   </div>
 </template>

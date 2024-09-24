@@ -2,8 +2,50 @@
 export default {
   data() {
     return { 
-      message: 'Contact with our team',
-      messagetwo: 'if you are planning on developing a prodcut landing'
+      footerLinksOne: [
+        {
+          label: 'About us',
+          url: '#'
+        },
+        {
+          label: 'Theme',
+          url: '#'
+        },
+        {
+          label: 'Features',
+          url: '#'
+        },
+        {
+          label: 'Pricing',
+          url: '#'
+        },
+        {
+          label: 'Blog',
+          url: '#'
+        }
+      ],
+      footerLinksTwo: [
+        {
+          label: 'About Sofbox',
+          url: '#'
+        },
+        {
+          label: 'Roadmap',
+          url: '#'
+        },
+        {
+          label: 'How it Work',
+          url: '#'
+        },
+        {
+          label: 'Team',
+          url: '#'
+        },
+        {
+          label: 'News',
+          url: '#'
+        }
+      ]
     }
   }
 }
@@ -13,10 +55,10 @@ export default {
   <footer>
     <div class="footer-top">
       <h1>
-        {{ message }}
+        Contact with our team
       </h1>
       <p>
-        {{ messagetwo }}
+        if you are planning on developing a product landing.
       </p>
     </div>
 
@@ -26,27 +68,34 @@ export default {
           <img src="/img/StaticMapService.GetMapIma.png" alt="map">
         </div>
       </div>
-      <div class="right-top">
-        <div class="right-logo">
-          <img src="/img/35.png" alt="logo">
+
+      <div class="right">
+        <div class="right-top">
+          <div class="right-logo">
+            <img src="/img/35.png" alt="logo">
+          </div>
+          <h3>9840 Shore St. Fond Du Lac, WI 54935</h3>
+          <p>0 1223 456 789</p>
+          <p>mail@softbox.com</p>
         </div>
-        <h3>9840 Shore St. Fond Du Lac, WI 54935</h3>
-        <p>0 1223 456 789</p>
-        <p>mail@softbox.com</p>
-      </div>
-      <div class="right-bottom">
-        <h3>Get in Touch</h3>
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">your name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">your email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-        </form>
+        <div class="right-bottom">
+          <h3>Get in Touch</h3>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your Name</label>
+              <input type="name" class="form-control" id="exampleInputname">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your Subject</label>
+              <input type="name" class="form-control" id="exampleInputname">
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -57,75 +106,86 @@ export default {
           <p>It is a long established fact that a reader will be distracted by the readable content</p>
           <p>Copyright @2018 Softbox</p>
         </div>
+      </div>
 
         <div class="bottom-right">
           <nav>
             <ul>
               <h4>Menu</h4>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Theme</a>
-              </li>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Pricing</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
+              <li v-for="(link, i) in footerLinksOne" :key="i">
+                <a :href="link.url">
+                  {{ link.label }}
+                </a>
               </li>
             </ul>
 
             <ul>
               <h4>About Us</h4>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Theme</a>
-              </li>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Pricing</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
+              <li v-for="(link, i) in footerLinksTwo" :key="i">
+                <a :href="link.url">
+                  {{ link.label }}
+                </a>
               </li>
             </ul>
 
             <ul>
               <h4>Quick Links</h4>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Theme</a>
-              </li>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Pricing</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
+              <li v-for="(link, i) in footerLinksOne" :key="i">
+                <a :href="link.url">
+                  {{ link.label }}
+                </a>
               </li>
             </ul>
           </nav>
         </div>
-      </div>
-
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+//footer-top
+.footer-top {
+  padding: 100px;
+  background-color: whitesmoke;
+}
+
+//footer-center
+.footer-center {
+  padding: 100px;
+  display: flex;
+}
+
+
+//footer-bottom
+.footer-bottom {
+  display: flex;
+}
+
+.bottom-logo {
+  width: 250px;
+}
+
+nav {
+  width: 500px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li a {
+  color: black;
+  text-decoration: none;
+}
+
 
 
 </style>
