@@ -2,7 +2,28 @@
 export default {
   data() {
     return { 
-      message: 'sb-marketing'
+      headerLinksOne: [
+        {
+          label: 'Home',
+          url: '#'
+        },
+        {
+          label: 'About Us',
+          url: '#'
+        },
+        {
+          label: 'Feature',
+          url: '#'
+        },
+        {
+          label: 'Testimonials',
+          url: '#'
+        },
+        {
+          label: 'Contact Us',
+          url: '#'
+        }
+      ]
     }
   }
 }
@@ -14,10 +35,15 @@ export default {
       <div class="header-logo">
         <img src="/img/logo-2.png" alt="logo">
       </div>
-      <div class="header-right">
-        <h2>
-          {{ message }}
-        </h2>
+      <div class="header-top-right">
+        <ul>
+          <li v-for="(link, i) in headerLinksOne" :key="i">
+            <a :href="link.url">
+              {{ link.label }}
+            </a>
+          </li>
+          <button type="submit" class="btn btn-primary">Get Started</button>
+        </ul>
       </div>
     </div>
 
@@ -41,13 +67,37 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
+@mixin simple-ul {
+  list-style: none;
+}
 
 header {
-  background-color: $mainBgColor;
   text-align: center;
   padding: 20px 0;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
+
+    ul {
+    @include simple-ul;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    li {
+      a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          color: rgb(26, 94, 242);
+        }
+
+      }
+    }
+  }
 }
 
 //header-top
@@ -67,6 +117,7 @@ img {
 //header-bottom
 
 .header-bottom {
+  background-color: $mainBgColor;
   display: flex;
 }
 
