@@ -45,6 +45,7 @@ export default {
               </li>
             </ul>
         </nav>
+      </div>
 
         <div class="list-center">
         <div class="list-img">
@@ -82,7 +83,7 @@ export default {
         </nav>
       </div>
 
-    </div>
+
   </div>
     <div class="main-two">
       <div class="prova">
@@ -119,9 +120,15 @@ export default {
       </div>
 
       <div class="main-box">
-          BOX
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Costumized Invoices</p>
         </div>
-    </div>
+        </div>
+      </div>
+        
+      </div>
 
     <div class="main-four">
       <div class="info-testimonials">
@@ -129,7 +136,13 @@ export default {
         <p>Faff about only a quid blower i don't want no agro bleeding chimney pot burkw tosser cras nice one boot fanny.!</p>
       </div>
       <div class="card-testimonial">
-
+        <div class="card" style="width: 18rem;">
+          <img src=".." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Julia Aann</p>
+        </div>
+        </div>
+        
       </div>
     </div>
 
@@ -182,6 +195,13 @@ main {
 
 
 //main-one
+.main-one {
+  display: flex;
+}
+
+.main-one > div {
+  width: calc(100% / 3 - 10px);
+}
 
 //main-two
 .main-two {
