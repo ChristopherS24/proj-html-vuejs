@@ -134,11 +134,13 @@ export default {
     </div>
 
     <div class="main-five">
+      
+      <div class="latest">
+        <h2>Latest Posts</h2>
+        <p>If you are planning on developing a product landing.</p>
+      </div>
+        
       <div class="posts">
-        <div class="latest">
-          <h2>Latest Posts</h2>
-          <p>If you are planning on developing a product landing.</p>
-        </div>
         <div class="posts-img">
           <div class="img-left">
             <img src="/img/19.jpg" alt="">
@@ -208,7 +210,21 @@ display: flex;
 }
 
 //main-five
+.main-five {
+  padding: 100px;
+}
 
+.latest {
+  padding: 50px;
+}
+
+.posts-img {
+  display: flex;
+}
+
+.posts-img img {
+  max-width: 90%;
+}
 
 
 

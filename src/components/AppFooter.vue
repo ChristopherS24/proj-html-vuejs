@@ -82,16 +82,13 @@ export default {
           <h3>Get in Touch</h3>
           <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Your Name</label>
-              <input type="name" class="form-control" id="exampleInputname">
+              <input type="name" class="form-control" id="exampleInputname" placeholder="Your Name">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Your Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Your Subject</label>
-              <input type="name" class="form-control" id="exampleInputname">
+              <input type="name" class="form-control" id="exampleInputname" placeholder="Your Subject">
             </div>
             <button type="submit" class="btn btn-primary">Send message</button>
           </form>
@@ -109,7 +106,7 @@ export default {
       </div>
 
         <div class="bottom-right">
-          <nav>
+
             <ul>
               <h4>Menu</h4>
               <li v-for="(link, i) in footerLinksOne" :key="i">
@@ -136,7 +133,7 @@ export default {
                 </a>
               </li>
             </ul>
-          </nav>
+
         </div>
     </div>
   </footer>
@@ -169,13 +166,25 @@ footer {
   display: flex;
 }
 
+.footer-bottom .bottom-right {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-bottom > div:first-child {
+  width: calc(100% / 4 - 10px);
+}
+
+.footer-bottom .bottom-right ul  {
+  width: calc(100% / 4 - 10px);
+}
+
+
 .bottom-logo {
   width: 250px;
 }
 
-nav {
-  width: 500px;
-}
 
 footer ul {
   list-style: none;
